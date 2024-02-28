@@ -1,0 +1,73 @@
+.top{
+    display: flex;
+}
+
+.logo {
+    float: left;
+    width: 10%;
+    padding: 10px 10px 10px 10px;
+}
+
+.logo img{
+    height: 70px;
+    width: 250px;
+}
+
+nav {
+    float: right;
+    padding: 1.5em 1em 1em 2em;
+    width: 90%;
+    text-align: center;
+
+}
+
+.nav-item{
+    display: inline-block;
+    margin: 0 35px 0 35px;
+}
+
+.nav-link {
+    background-color: black;
+}
+
+.nav-pills{
+    margin-left: 170px;
+}
+
+.content {
+    display: flex;
+    padding: 10px;
+}
+
+#sidebar {
+    width: 25%;
+    background-color: #f1f1f1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#display-resume {
+    width: 75%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#display {
+    width: 75%;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+#resume{
+    width: 900px;
+    height: 1100px;
+}
+
+footer{
+    text-align: center;
+    padding-top: 20px;
+}
+
+footer a {
+    margin: 8px;
+}
