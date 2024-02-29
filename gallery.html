@@ -47,9 +47,65 @@
             </fieldset>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+
+        <hr>
+
+        <div id="apiDisplay"></div>
+
+        <script>
+            const div = document.getElementById('apiDisplay');
+            const url = 'https://icanhazdadjoke.com/';
+
+            const headers = new Headers({
+                'Accept': 'application/json'
+            });
+
+            fetch(url, {headers})
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log(data);
+                    let p = document.createElement('p');
+                    p.innerHTML = `${data.joke}`;
+                    div.appendChild(p);
+                })
+                .catch(function (error){
+                    console.log(error);
+                });
+
+        </script>
+
     </div>
     <div id="display">
-        <h2>CONTENT</h2>
+        <p class="display-top">Gallery</p>
+        <table>
+            <tr>
+                <th>Photo</th>
+                <th>Description</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td><img src="resources/images/IST 220 Project.png" alt="Networking Project" style="width: 400px; height: 400px;"></td>
+                <td>In this project we were tasked with selecting a company with at least 12 physical sites
+                and structuring a feasible network for them. We listed out their needs for their
+                site to site connectivity, main site structure and computer systems, as well as each
+                local site's structure and computer system needs. We also listed their security requirements
+                by law and diagrams of the site to site, local site and main site setup.</td>
+                <td><a href="resources/documents/220 Team Project (1) (1).pdf">Networking Project</a></td>
+            </tr>
+            <tr>
+                <td><img src="resources/images/IST 242 Project.png" alt="Programming Project" style="width: 400px; height: 320px;"></td>
+                <td>I created a simple app using Java where it would open an interface that allowed you to
+                create a list of numbers of however long you wanted adding them one by one. There is a cursor
+                in the list that you can move with buttons to add numbers in different positions. You also can
+                    enter a number and check if the current list contains that number or not. While it may seem
+                simple this project displays my comprehension in many different aspects of Java like GUIs, controllers,
+                linked lists, nodes, buttons, and various loops.</td>
+                <td><a href="">Github Link</a> </td>
+            </tr>
+        </table>
+
     </div>
 
 </div>

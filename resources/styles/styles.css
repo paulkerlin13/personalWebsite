@@ -58,9 +58,25 @@ nav {
     padding-left: 10px;
 }
 
+#display a{
+    font-size: 25px;
+}
+
+#display table{
+    text-align: center;
+}
+
+#display table td {
+    padding: 10px;
+}
+.display-top {
+    font-size: 35px;
+    font-weight: 800;
+}
+
 #resume{
     width: 900px;
-    height: 1100px;
+    height: 1050px;
 }
 
 footer{

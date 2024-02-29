@@ -47,8 +47,38 @@
             </fieldset>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+
+        <hr>
+
+        <div id="apiDisplay"></div>
+
+        <script>
+            const div = document.getElementById('apiDisplay');
+            const url = 'https://icanhazdadjoke.com/';
+
+            const headers = new Headers({
+                'Accept': 'application/json'
+            });
+
+            fetch(url, {headers})
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log(data);
+                    let p = document.createElement('p');
+                    p.innerHTML = `${data.joke}`;
+                    div.appendChild(p);
+                })
+                .catch(function (error){
+                    console.log(error);
+                });
+
+        </script>
+
     </div>
     <div id="display">
+        <p class="display-top">Work Experience</p>
         <h2>Cattail Country Club - Outside Service Attendant</h2>
         <ul>
             <li>May 2023 - Current</li>

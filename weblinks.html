@@ -47,19 +47,47 @@
             </fieldset>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+
+        <hr>
+
+        <div id="apiDisplay"></div>
+
+        <script>
+            const div = document.getElementById('apiDisplay');
+            const url = 'https://icanhazdadjoke.com/';
+
+            const headers = new Headers({
+                'Accept': 'application/json'
+            });
+
+            fetch(url, {headers})
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log(data);
+                    let p = document.createElement('p');
+                    p.innerHTML = `${data.joke}`;
+                    div.appendChild(p);
+                })
+                .catch(function (error){
+                    console.log(error);
+                });
+
+        </script>
+
     </div>
     <div id="display">
-        <h2>CONTENT</h2>
+        <p class="display-top">Links</p>
+        <a href="https://www.linkedin.com/in/paul-kerlin-62398621b/">LinkedIn</a> <br>
+        <a href="https://github.com/paulkerlin13">Github</a><br>
+        <a href="resources/documents/Paul's Resume.pdf">Resume</a>
+        <br>
+        <br>
+        <h5>Paul Kerlin <br> 412 W College Ave, State College, PA 16801 <br> (301) 832-7687 <br> pmk5532@psu.edu</h5>
     </div>
 
 </div>
-
-<footer>
-    <a href="https://www.linkedin.com/in/paul-kerlin-62398621b/">LinkedIn</a>
-    <a href="https://github.com/paulkerlin13">Github</a>
-    <p>Paul Kerlin <br> 412 W College Ave, State College, PA 16801 <br> (301) 832-7687 <br> pmk5532@psu.edu </p>
-    <p>&copy; Copyright 2024</p>
-</footer>
 
 </body>
 </html>

@@ -47,16 +47,47 @@
             </fieldset>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+
+        <hr>
+
+        <div id="apiDisplay"></div>
+
+        <script>
+            const div = document.getElementById('apiDisplay');
+            const url = 'https://icanhazdadjoke.com/';
+
+            const headers = new Headers({
+                'Accept': 'application/json'
+            });
+
+            fetch(url, {headers})
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log(data);
+                    let p = document.createElement('p');
+                    p.innerHTML = `${data.joke}`;
+                    div.appendChild(p);
+                })
+                .catch(function (error){
+                    console.log(error);
+                });
+
+        </script>
+
     </div>
     <div id="display">
+        <p class="display-top">Education</p>
         <h2>The Pennsylvania State University, University Park, PA</h2>
+        <h4>B.S. Cybersecurity Analytics and Operations</h4>
         <ul>
             <li>Information Sciences and Technology</li>
-            <li>B.S. Cybersecurity Analytics and Operations</li>
             <li>Expected May 2026</li>
             <li>GPA: 3.93 - Dean’s List</li>
         </ul>
         <h2>Our Lady of Good Counsel High School, Olney, MD</h2>
+        <h4>High School Diploma</h4>
         <ul>
             <li>Graduated with Honors</li>
             <li>June 2022</li>
